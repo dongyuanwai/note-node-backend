@@ -1,4 +1,5 @@
-# example
+# note-node-backend(egg.js + mysql)
+
 
 
 
