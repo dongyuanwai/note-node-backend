@@ -20,11 +20,8 @@ class HomeController extends Controller {
   async user() {
     const { ctx } = this;
     // 获取参数
-    const { name, slogen } = await ctx.service.home.user();
-    ctx.body = {
-      name,
-      slogen,
-    };
+    const result = await ctx.service.home.user();
+    ctx.body = result;
   }
 
   // post请求方法
