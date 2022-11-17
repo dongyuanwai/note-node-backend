@@ -11,5 +11,5 @@ module.exports = app => {
 
   // post请求
   router.post('/add_user', controller.home.addUser);
-
+  router.post('/edit_user', controller.home.editUser);
 };
