@@ -10,6 +10,6 @@ module.exports = app => {
   router.get('/user', controller.home.user);
 
   // post请求
-  router.post('/add', controller.home.add);
+  router.post('/add_user', controller.home.addUser);
 
 };
