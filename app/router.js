@@ -9,7 +9,10 @@ module.exports = app => {
   router.get('/user/:id', controller.home.user);
   router.get('/user', controller.home.user);
 
-  // post请求
+  // post请求 添加
   router.post('/add_user', controller.home.addUser);
+  // 编辑
   router.post('/edit_user', controller.home.editUser);
+  // 删除
+  router.post('/delete_user', controller.home.deleteUser);
 };
