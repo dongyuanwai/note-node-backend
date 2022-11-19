@@ -37,6 +37,11 @@ module.exports = appInfo => {
     mapping: { '.html': 'ejs' },
   };
 
+  // 鉴权加密
+  config.jwt = {
+    secret: 'Uath',
+  };
+
   exports.mysql = {
     // 单数据库信息配置
     client: {

@@ -56,6 +56,46 @@ class UserController extends Controller {
     }
   }
 
+  //   登录接口
+  async login() {
+    const { ctx, app } = this;
+    const { username, password } = ctx.request.body;
+    // 根据用户名 查找用户信息
+    const userInfo = await ctx.service.user.getUserByName(username);
+    // 如果没有找到用户
+    if (!userInfo || !userInfo.id) {
+      ctx.body = {
+        code: 500,
+        msg: '您的账号不存在',
+        data: null,
+      };
+      return;
+    }
+    // 找到用户，并且判断输入密码与数据库中用户密码。
+    if (userInfo && password !== userInfo.password) {
+      ctx.body = {
+        code: 500,
+        msg: '账号密码错误',
+        data: null,
+      };
+      return;
+    }
+
+    // 成功走到这一步 开始加密生成token
+    // app.jwt.sign 方法接受两个参数，第一个为对象，对象内是需要加密的内容；第二个是加密字符串，上文已经提到过。
+    const token = app.jwt.sign({
+      id: userInfo.id,
+      username: userInfo.username,
+      exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60), // token 有效期为 24 小时
+    }, app.config.jwt.secret);
+    ctx.body = {
+      code: 200,
+      message: '登录成功',
+      data: {
+        token,
+      },
+    };
+  }
 }
 
 module.exports = UserController;
