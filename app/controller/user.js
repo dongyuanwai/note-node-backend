@@ -37,7 +37,7 @@ class UserController extends Controller {
       username,
       password,
       ctime,
-      signature: '世界和平。',
+      signature: '董员外记账本，好用的不得了',
       avatar: defaultAvatar,
     });
 
