@@ -19,11 +19,8 @@ $ npm start
 $ npm stop
 ```
 
-### npm scripts
+### 步骤
 
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
-- Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-
-
-[egg]: https://eggjs.org
+- service：SQL语句获取数据库数据
+- controller：拿到数据后，开始处理逻辑
+- router：接口地址，调用处理逻辑的方法
