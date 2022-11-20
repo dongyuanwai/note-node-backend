@@ -21,8 +21,6 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
-    uploadDir: 'app/public/upload',
-
   };
 
   // 白名单
@@ -39,22 +37,6 @@ module.exports = appInfo => {
     mapping: { '.html': 'ejs' },
   };
 
-  // 鉴权加密
-  config.jwt = {
-    secret: 'Uath',
-  };
-
-
-  config.multipart = {
-    mode: 'file',
-  };
-
-  config.cors = {
-    origin: '*', // 允许所有跨域访问
-    credentials: true, // 允许 Cookie 跨域跨域
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
-  };
-
   exports.mysql = {
     // 单数据库信息配置
     client: {
@@ -67,7 +49,7 @@ module.exports = appInfo => {
       // 密码
       password: '123456', // 初始化密码，没设置的可以不写
       // 数据库名
-      database: 'note', // 我们新建的数据库名称
+      database: 'test', // 我们新建的数据库名称
     },
     // 是否加载到 app 上，默认开启
     app: true,

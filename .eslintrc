@@ -1,8 +1,4 @@
 {
   "extends": "eslint-config-egg",
-  "root": true,
-  "rules":{
-    "no-unused-vars":0,
-    "prefer-const": "off"
-  }
+  "root": true
 }

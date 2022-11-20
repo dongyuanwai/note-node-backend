@@ -1,5 +1,5 @@
 {
-  "name": "note-backend",
+  "name": "example",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -8,13 +8,9 @@
   },
   "dependencies": {
     "egg": "^3",
-    "egg-cors": "^2.2.3",
-    "egg-jwt": "^3.1.7",
     "egg-mysql": "^3.1.1",
     "egg-scripts": "^2",
-    "egg-view-ejs": "^3.0.0",
-    "mkdirp": "^0.5.6",
-    "moment": "^2.29.4"
+    "egg-view-ejs": "^3.0.0"
   },
   "devDependencies": {
     "egg-bin": "^5",

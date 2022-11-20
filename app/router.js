@@ -4,19 +4,15 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-  const { router, controller, middleware } = app;
-  const _jwt = middleware.jwtErr(app.config.jwt.secret); // 传入加密字符串
-  // 注册接口
-  router.post('/api/user/register', controller.user.register);
-  // 登录
-  router.post('/api/user/login', controller.user.login);
-  // 获取用户信息，并且添加鉴权中间件
-  router.get('/api/user/get_userinfo', _jwt, controller.user.getUserInfo);
-  // 我们测试一下接口是否可行：
-  router.get('/api/user/test', _jwt, controller.user.test);
-  // 修改用户个性签名
-  router.post('/api/user/edit_userinfo', _jwt, controller.user.editUserInfo);
+  const { router, controller } = app;
+  router.get('/', controller.home.index);
+  router.get('/user/:id', controller.home.user);
+  router.get('/user', controller.home.user);
 
-  // 上传图片
-  router.post('/api/upload', controller.upload.upload);
+  // post请求 添加
+  router.post('/add_user', controller.home.addUser);
+  // 编辑
+  router.post('/edit_user', controller.home.editUser);
+  // 删除
+  router.post('/delete_user', controller.home.deleteUser);
 };
