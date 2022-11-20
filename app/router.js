@@ -14,4 +14,6 @@ module.exports = app => {
   router.get('/api/user/get_userinfo', _jwt, controller.user.getUserInfo);
   // 我们测试一下接口是否可行：
   router.get('/api/user/test', _jwt, controller.user.test);
+  // 修改用户个性签名
+  router.post('/api/user/edit_userinfo', _jwt, controller.user.editUserInfo);
 };
