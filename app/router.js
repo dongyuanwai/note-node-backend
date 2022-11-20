@@ -16,4 +16,7 @@ module.exports = app => {
   router.get('/api/user/test', _jwt, controller.user.test);
   // 修改用户个性签名
   router.post('/api/user/edit_userinfo', _jwt, controller.user.editUserInfo);
+
+  // 上传图片
+  router.post('/api/upload', controller.upload.upload);
 };

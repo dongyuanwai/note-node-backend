@@ -21,6 +21,8 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    uploadDir: 'app/public/upload',
+
   };
 
   // 白名单
@@ -40,6 +42,17 @@ module.exports = appInfo => {
   // 鉴权加密
   config.jwt = {
     secret: 'Uath',
+  };
+
+
+  config.multipart = {
+    mode: 'file',
+  };
+
+  config.cors = {
+    origin: '*', // 允许所有跨域访问
+    credentials: true, // 允许 Cookie 跨域跨域
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   };
 
   exports.mysql = {
