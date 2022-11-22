@@ -19,4 +19,7 @@ module.exports = app => {
 
   // 上传图片
   router.post('/api/upload', controller.upload.upload);
+
+  // 添加账单
+  router.post('/api/bill/add', _jwt, controller.bill.add);
 };
