@@ -3,6 +3,9 @@
   "root": true,
   "rules":{
     "no-unused-vars":0,
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "semi": [1,"always"], //末尾加分号 1开启 always允许
+    "eqeqeq":[0,"always"],
+    "indent": 0
   }
 }
