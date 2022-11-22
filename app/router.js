@@ -22,4 +22,6 @@ module.exports = app => {
 
   // 添加账单
   router.post('/api/bill/add', _jwt, controller.bill.add);
+  // 获取账单列表
+  router.get('/api/bill/list', _jwt, controller.bill.list);
 };
