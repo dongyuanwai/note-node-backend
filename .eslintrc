@@ -6,6 +6,7 @@
     "prefer-const": "off",
     "semi": [1,"always"], //末尾加分号 1开启 always允许
     "eqeqeq":[0,"always"],
-    "indent": 0
+    "indent": 0,
+    "allowImplicit": true 
   }
 }
