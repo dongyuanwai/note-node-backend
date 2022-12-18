@@ -34,4 +34,6 @@ module.exports = app => {
   // 获取数据
   router.get('/api/bill/data', _jwt, controller.bill.data); 
 
+  router.post('/api/user/modify_pass', _jwt, controller.user.modifyPass); // 修改用户密码
+  
 };
